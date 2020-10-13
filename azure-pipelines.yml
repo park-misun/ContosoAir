@@ -1,4 +1,10 @@
 pool:
+- task: AzureVmssDeployment@0
+  inputs:
+    azureSubscription: '종량제1(1c2a5318-fcca-42b7-a64e-18882c6ddbe9)'
+    action: 'Configure application startup'
+    vmssName: 'davidvmss'
+    vmssOsType: 'Linux'
   vmImage: ubuntu-16.04
 trigger:
   - master    ## CI Triggers 를 통해 실행 => Master branch에 업데이트가 trigger로 동작
